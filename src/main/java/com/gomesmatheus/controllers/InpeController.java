@@ -18,7 +18,7 @@ public class InpeController {
     @Autowired
     private InpeService service;
 
-    @GetMapping("/inpe")
+    @GetMapping("/")
     public String inpe(Model model) {
         List<Cidade> cidades = service.getListaDeCidades();
         model.addAttribute("cidades", cidades);
