@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Previsão</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div>
+        <h1 th:text="${previsao.nome}"></h1>
+        <h3 th:text="'Atualizado em: ' + ${previsao.atualizacao}"></h3>
+        <table>
+            <th:block th:each="dia : ${previsao.previsao}">
+                <tr>
+                    <td>Dia: </td>
+                    <td th:text="${dia.getDia()}"></td>
+                </tr>
+                <tr>
+                    <td>Mínima: </td>
+                    <td th:text="${dia.getMinima()}"></td>
+                    <td>Máxima: </td>
+                    <td th:text="${dia.getMaxima()}"></td>
+                </tr>
+                <tr>
+                    <td>Clima: </td>
+                    <td th:text="${dia.getTempo()}"></td>
+                </tr>
+            </th:block>
+        </table>
+    </div>
+</body>
+</html>
